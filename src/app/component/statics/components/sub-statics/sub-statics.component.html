@@ -1,0 +1,40 @@
+<div class="d-flex flex-wrap justify-content-around mt-3 mb-4">
+  <div class="d-flex justify-content-center">
+    <div class="p-4 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+      <div class="m-crd-wrapper mt-4">
+        <div class="d-flex flex-column align-items-center">
+          <div>
+            <div>
+              <div style="display: block">
+                <canvas baseChart
+                        [data]="doughnutChartData"
+                        [type]="doughnutChartType">
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="p-4 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+    <div class="m-crd-wrapper mt-4">
+      <div class="d-flex flex-column align-items-center">
+        <circle-progress
+          [percent]=percent
+          [radius]="135"
+          [outerStrokeWidth]="16"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#23784D'"
+          [innerStrokeColor]="'#08903D'"
+          [animation]="true"
+          [animationDuration]="300"
+          titleFontSize='45'
+          subtitleFontSize='27'
+          titleColor='#23784D'
+          subtitleColor='#08903D'
+        ></circle-progress>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

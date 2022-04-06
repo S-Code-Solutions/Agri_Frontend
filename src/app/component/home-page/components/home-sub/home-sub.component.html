@@ -1,0 +1,126 @@
+<div class="mat-typography">
+<section class="section-one">
+
+  <owl-carousel-o [options]="advertisementsOptions">
+
+    <ng-container *ngFor="let slide of slidesStore">
+      <ng-template carouselSlide [id]="slide.id">
+        <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+</section>
+<section class="section-two crd-rw">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <mat-icon aria-hidden="false" class="ico-plant text-center" aria-label="Example compost icon">compost</mat-icon>
+            <h2 class="card-title text-center">Home</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <mat-icon aria-hidden="false" class="ico-plant text-center" aria-label="Example spa icon">spa</mat-icon>
+            <h2 class="card-title text-center">About Us</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <mat-icon aria-hidden="false" class="ico-plant text-center" aria-label="Example bug_report icon">bug_report</mat-icon>
+            <h2 class="card-title text-center">Problems</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <mat-icon aria-hidden="false" class="ico-plant text-center" aria-label="Example shopping_bag icon">shopping_bag</mat-icon>
+            <h2 class="card-title text-center">Shop</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <mat-icon aria-hidden="false" class="ico-plant text-center" aria-label="Example incomplete_circle icon">incomplete_circle</mat-icon>
+            <h2 class="card-title text-center">Statics</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <mat-icon aria-hidden="false" class="ico-plant text-center" aria-label="Example contact_phone icon">contact_phone</mat-icon>
+            <h2 class="card-title text-center">Contact Us</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-three mt-5">
+  <span>
+  <h2 class="ms-5" style="color: #ffb606; font-size: 22px; font-weight: bold">Latest</h2>
+  <h1 class="ms-5" style="color: #08903D; line-height: 0.1; font-size: 35px; font-weight: bold">News</h1>
+  </span>
+  <hr class="mb-3 ms-5 mt-2" style="width: 50px; background: #ffb606; height: 3px; opacity: 1">
+
+  <owl-carousel-o [options]="customOptions4">
+    <ng-container *ngIf="eventImages.length > 0">
+      <ng-template carouselSlide *ngFor="let slide of eventImages">
+        <div class="slide slide-wrapper mt-5 mb-5">
+          <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" class="slide-sub-wrapper">
+          <div class="container">
+            <div class="center-item">
+              <button class="btn-event" mat-raised-button color="warn" [textContent]="slide.eventhead"></button>
+            </div>
+          </div>
+          <div class="container">
+            <div class="bottom-left">
+              <button class="btn-event" mat-raised-button color="primary" [textContent]="slide.eventsub"></button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+
+
+</section>
+
+<section class="section-four">
+  <span>
+  <h2 class="ms-5" style="color: #ffb606; font-size: 22px; font-weight: bold">Latest</h2>
+  <h1 class="ms-5" style="color: #08903D; line-height: 0.1; font-size: 35px; font-weight: bold">Events</h1>
+  </span>
+  <hr class="mb-3 ms-5 mt-2" style="width: 50px; background: #ffb606; height: 3px; opacity: 1">
+
+  <owl-carousel-o [options]="customOptions3">
+
+    <ng-container >
+      <ng-template carouselSlide *ngFor="let slide of newsImages" >
+        <div class="slide2 project-slide2 mt-5 mb-5">
+          <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" class="img-project2">
+          <div class="centered2">
+            <h3 style="color: white" [textContent]="slide.headone" ></h3>
+            <h1 style="color: white" [textContent]="slide.subhead"></h1>
+            <button mat-stroked-button class="btn-view-more2 mt-2"  color="accent">View More</button>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+</section>
+</div>

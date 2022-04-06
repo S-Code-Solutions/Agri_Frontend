@@ -1,0 +1,100 @@
+<div class="mat-typography">
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-auto">
+        <a class="navbar-brand" href="#">
+          <img alt="" class="d-inline-block align-text-center" height="100%" src="https://i.ibb.co/KWBsygT/fococlipping-20220313-15031.png" width="70%">
+        </a>
+      </div>
+      <div class="col-auto">
+        <mat-icon aria-hidden="false" class="ico-phone" aria-label="Example call icon">call</mat-icon>
+      </div>
+      &nbsp;
+      <div class="col-auto txt-cl">
+        <h2 class="mt-1">Telephone</h2>
+        <h4 class="txt-desc">+94 812 388331 / 32/ 34</h4>
+      </div>
+      <div class="col-auto">
+        <mat-icon aria-hidden="false" class="ico-phone" aria-label="Example email icon">email</mat-icon>
+      </div>
+      &nbsp;
+      <div class="col-auto txt-cl">
+        <h2 class="mt-1">Email Address</h2>
+        <h4 class="txt-desc">info@doa.gov.lk</h4>
+      </div>
+      <div class="col-auto">
+        <mat-icon aria-hidden="false" class="ico-phone" aria-label="Example location_on icon">location_on</mat-icon>
+      </div>
+      &nbsp;
+      <div class="col-auto txt-cl">
+        <h2 class="mt-1">Office Address</h2>
+        <h4 class="txt-desc">Department of Agriculture, P.O.Box. 01,
+          Peradeniya</h4>
+      </div>
+    </div>
+
+
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light navbar-sec">
+  <div class="container-fluid">
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./homePage'" href="#"><span>Home</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./aboutUs'" href="#"><span>About Us</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedFarm" routerLinkActive="buttonActive" [routerLink]="'./fProblems'" href="#"><span>Farmer Problems</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./products'" href="#"><span>Shop</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedFarm" routerLinkActive="buttonActive" [routerLink]="'./experts'" href="#"><span>Agri Experts</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./statics'" href="#"><span>Agri Statics</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./contactUs'" href="#"><span>Contact</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="#">
+            <mat-icon aria-hidden="false" class="ico-social" aria-label="Example facebook icon">facebook</mat-icon>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">
+            <mat-icon aria-hidden="false" class="ico-social" aria-label="Example email icon">email</mat-icon>
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex ms-3">
+        <div id="wrap" [matMenuTriggerFor]="menu">
+          <button mat-raised-button color="Basic" type="button">Login Here</button>
+        </div>
+        <mat-menu #menu="matMenu" >
+          <div mat-menu-item class="btn-login">
+            <button  mat-icon-button aria-label="Logout" routerLinkActive="buttonActive" [routerLink]="'authentication/farmerlogin'"  style="margin-left: -15px; width: 150px">
+              <mat-icon style="margin-right: 15px">login</mat-icon>Login As Farmer
+            </button>
+          </div>
+          <div mat-menu-item class="btn-login">
+            <button  mat-icon-button aria-label="Logout" routerLinkActive="buttonActive" [routerLink]="'authentication/expertlogin'"  style="margin-left: -15px; width: 150px">
+              <mat-icon style="margin-right: 15px">login</mat-icon>Login As Expert
+            </button>
+          </div>
+        </mat-menu>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
