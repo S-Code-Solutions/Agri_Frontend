@@ -10,7 +10,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
 
@@ -21,17 +21,18 @@ import {MatButtonModule} from "@angular/material/button";
     FarmerLoginComponent,
     ExpretLoginComponent
   ],
-  imports: [
-    CommonModule,
-    AuthenticationRoutingModule,
-    MatCardModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    FormsModule,
-    MatCheckboxModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        AuthenticationRoutingModule,
+        MatCardModule,
+        MatTabsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        FormsModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        ReactiveFormsModule
+    ]
 })
 export class AuthenticationModule { }

@@ -12,21 +12,33 @@ export class HomeServiceService {
       slidesStore: [
         {
           id: "1",
-          src: 'https://www.baltspace.eu/images/baltspace_research/header_rock_boat_cloud_900_300.jpg',
+          src: 'https://i.ibb.co/NY7Zq9n/banner2-01-01.png',
           alt: 'Image_1',
           title: 'Image_1'
         },
         {
           id: "2",
-          src: 'https://www.baltspace.eu/images/baltspace_research/header_marxan_900_300.jpg',
+          src: 'https://i.ibb.co/52yFsK3/banner3-01-01.png',
           alt: 'Image_2',
           title: 'Image_3'
         },
         {
           id: "3",
-          src: 'http://energiaekonomistit.fi/wp/wp-content/uploads/2012/12/lighthouse-900x300.jpg',
+          src: 'https://i.ibb.co/mNfnkJD/banner4-01-01.png',
           alt: 'Image_3',
           title: 'Image_3'
+        },
+        {
+          id: "4",
+          src: 'https://i.ibb.co/QvGmSMz/banner6-01.png',
+          alt: 'Image_4',
+          title: 'Image_4'
+        },
+        {
+          id: "5",
+          src: 'https://i.ibb.co/f29HMRm/banner5-01.png',
+          alt: 'Image_5',
+          title: 'Image_5'
         },
       ]
     })
@@ -38,51 +50,51 @@ export class HomeServiceService {
       eventStore : [
         {
           id: "1",
-          src: 'https://i.ibb.co/v4ppJjB/project3.jpg',
+          src: 'https://i.ibb.co/CBstQ3B/news5-01.png',
           alt: 'Image_1',
           title: 'Image_1',
-          eventhead:'Event Head-1',
-          eventsub:'Event Sub-1'
+          eventhead:'View More',
+          eventsub:'Cursor Here'
         },
         {
           id: "2",
-          src: 'https://i.ibb.co/KhxzYv5/project2.jpg',
+          src: 'https://i.ibb.co/DtN2xdG/news3-01.png',
           alt: 'Image_2',
           title: 'Image_3',
-          eventhead:'Event Head-2',
-          eventsub:'Event Sub-2'
+          eventhead:'View More',
+          eventsub:'Cursor Here'
         },
         {
           id: "3",
-          src: 'https://i.ibb.co/VVmW8hb/project1.jpg',
+          src: 'https://i.ibb.co/BNH63BP/news2-01.png',
           alt: 'Image_3',
           title: 'Image_3',
-          eventhead:'Event Head-3',
-          eventsub:'Event Sub-3'
+          eventhead:'View More',
+          eventsub:'Cursor Here'
         },
         {
           id: "4",
-          src: 'https://i.ibb.co/v4ppJjB/project3.jpg',
+          src: 'https://i.ibb.co/0K1BRCT/news1-01.png',
           alt: 'Image_1',
           title: 'Image_1',
-          eventhead:'Event Head-4',
-          eventsub:'Event Sub-4'
+          eventhead:'View More',
+          eventsub:'Cursor Here'
         },
         {
           id: "5",
-          src: 'https://i.ibb.co/KhxzYv5/project2.jpg',
+          src: 'https://i.ibb.co/CBstQ3B/news5-01.png',
           alt: 'Image_2',
           title: 'Image_3',
-          eventhead:'Event Head-5',
-          eventsub:'Event Sub-5'
+          eventhead:'View More',
+          eventsub:'Cursor Here'
         },
         {
           id: "6",
-          src: 'https://i.ibb.co/VVmW8hb/project1.jpg',
+          src: 'https://i.ibb.co/DtN2xdG/news3-01.png',
           alt: 'Image_3',
           title: 'Image_3',
-          eventhead:'Event Head-6',
-          eventsub:'Event Sub-6'
+          eventhead:'View More',
+          eventsub:'Cursor Here'
         },
       ]
     })
@@ -93,51 +105,51 @@ export class HomeServiceService {
       newsStore : [
         {
           id:"1",
-          src:'https://i.ibb.co/SQZJXZM/people.jpg',
+          src:'https://i.ibb.co/jwPhb9z/event2-01.png',
           alt:'Image_1',
           title:'Image_1',
-          headone:'NewsHead1',
-          subhead:'SubHead1'
+          headone:'Organized By Freshio',
+          subhead:'Paddy Fields research Event'
         },
         {
           id:"2",
-          src:'https://i.ibb.co/pxB672v/business-partners-meeting-cafe.jpg',
+          src:'https://i.ibb.co/9G3t7B5/event3-01.png',
           alt:'Image_2',
           title:'Image_3',
-          headone:'NewsHead2',
-          subhead:'SubHead2'
+          headone:'Organized By Freshio',
+          subhead:'Corn Fields Workshop'
         },
         {
           id:"3",
-          src:'https://i.ibb.co/SQZJXZM/people.jpg',
+          src:'https://i.ibb.co/CQK4tLX/event4-01.png',
           alt:'Image_3',
           title:'Image_3',
-          headone:'NewsHead3',
-          subhead:'SubHead3'
+          headone:'Organized By Freshio',
+          subhead:'Compost Fertilizing'
         },
         {
           id:"4",
-          src:'https://i.ibb.co/pxB672v/business-partners-meeting-cafe.jpg',
+          src:'https://i.ibb.co/ssJ3bBL/event1-01.png',
           alt:'Image_1',
           title:'Image_1',
-          headone:'NewsHead4',
-          subhead:'SubHead4'
+          headone:'Organized By Freshio',
+          subhead:'Tube Well Event'
         },
         {
           id:"5",
-          src:'https://i.ibb.co/SQZJXZM/people.jpg',
+          src:'https://i.ibb.co/jwPhb9z/event2-01.png',
           alt:'Image_2',
           title:'Image_3',
-          headone:'NewsHead5',
-          subhead:'SubHead5'
+          headone:'Organized By Freshio',
+          subhead:'Paddy Fields research Event'
         },
         {
           id:"6",
-          src:'https://i.ibb.co/pxB672v/business-partners-meeting-cafe.jpg',
+          src:'https://i.ibb.co/9G3t7B5/event3-01.png',
           alt:'Image_3',
           title:'Image_3',
-          headone:'NewsHead6',
-          subhead:'SubHead6'
+          headone:'Organized By Freshio',
+          subhead:'Corn Fields Workshop'
         },
       ]
     })

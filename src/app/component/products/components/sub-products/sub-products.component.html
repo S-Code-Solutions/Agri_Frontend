@@ -2,26 +2,92 @@
   <div class="container mt-3 mb-5">
     <div class="d-flex align-items-center justify-content-center">
       <div class="cover-one">
-        <h1 class="text-center txt-sub-head-2 mb-4 mt-4" style="color: white"><span style="color: #ffb606">BUY</span> YOUR FAVOURITES<br>
-          FROM THE <span style="color: #ffb606">FARMERS WELFARE</span> SHOP</h1>
+        <h1 class="text-center txt-sub-head-2 mb-4 mt-4" style="color: white"><span style="color: #A2CD3A">BUY</span> YOUR FAVOURITES<br>
+          FROM THE <span style="color: #A2CD3A">FARMERS WELFARE</span> SHOP</h1>
       </div>
     </div>
   </div>
-  <h1 class="text-center txt-head1 mt-4">Popular Products</h1>
+
+  <form  [formGroup]="itemDetailsForm" class="form-container mb-3" *ngIf="FarmForm" >
+    <div class="container p-3 mt-5 mb-3"
+         style="border: 3px solid #08903D; width: auto; height: auto; border-radius: 10px">
+      <div class="text-center mt-2">
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="outline" class="mt-form-field">
+              <mat-label>Product Name</mat-label>
+              <input formControlName="product_title"  matInput placeholder="Product Name" minlength="1">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" class="mt-form-field">
+              <mat-label>Product Desc</mat-label>
+              <input  formControlName="product_desc" matInput placeholder="Product Desc" minlength="1">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-2">
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="outline" class="mt-form-field">
+              <mat-label>Product Price</mat-label>
+              <input formControlName="product_price" matInput placeholder="Product Price" minlength="1">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" class="mt-form-field">
+              <mat-label>Product Img</mat-label>
+              <input formControlName="product_img" matInput placeholder="Product Img" minlength="1">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-2">
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="outline" class="mt-form-field">
+              <mat-label>Product Fertilizer</mat-label>
+              <input type="text"
+                     placeholder="Product Price"
+                     aria-label="Product Price"
+                     matInput
+                     formControlName="fertilizer"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end me-5">
+        <button type="reset" class="btn btn-primary me-4 btn-reset">Reset</button>
+        <button type="submit" class="btn btn-primary btn-add2" (click)="saveProduct()">Add Product</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="container mt-5">
+    <hr class="ruler">
+  </div>
+  <h1 class="text-center txt-head1 ">Popular Products</h1>
   <div class="container">
     <hr class="ruler">
   </div>
   <div>
     <div>
       <div class="d-flex flex-wrap justify-content-around mt-5 mb-4">
-        <div *ngFor="let folder of memberImages">
+        <div *ngFor="let folder of serviceProducts">
           <div class="p-4 col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <div class="m-crd-wrapper mt-4">
               <div class="d-flex flex-column align-items-center">
-              <img [src]="folder.src" alt="user" class="m-img-wrapper" >
-              <h1 class="mt-3 m-header">{{folder.name}}</h1>
-              <h4 class="descip">{{folder.desc}}</h4>
-              <button mat-raised-button color="Basic" type="button" class="mt-3" (click)="updateItem(folder.name)">Buy now</button>
+              <img [src]="folder.product_img" alt="user" class="m-img-wrapper" >
+              <h1 class="mt-3 m-header">{{folder.product_title}}</h1>
+              <h4 class="descip">{{folder.product_desc}}</h4>
+              <button mat-raised-button color="Basic" type="button" class="mt-3" (click)="updateItem(folder.product_id)">Buy now</button>
               </div>
               </div>
           </div>

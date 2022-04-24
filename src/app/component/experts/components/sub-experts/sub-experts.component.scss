@@ -9,14 +9,22 @@
 
 .user-img{
   object-fit:cover;
-  width: 150px;
+  width: 100px;
   border-radius: 100%;
   padding: 20px;
 }
+.h11{
+  font-size: 1.5em;
+}
 .cover-one{
-  background: #08903D;
+  background: #165D40;
   font-size: 26.88px;
   width: 100%;
   border-radius: 16px;
 }
+
+:host ::ng-deep .mat-expansion-panel-body{
+  padding: 0 24px 0 !important;
+}
+
 

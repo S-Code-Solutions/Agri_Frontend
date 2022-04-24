@@ -21,7 +21,7 @@
       &nbsp;
       <div class="col-auto txt-cl">
         <h2 class="mt-1">Email Address</h2>
-        <h4 class="txt-desc">info@doa.gov.lk</h4>
+        <h4 class="txt-desc">info@doa.freshio.lk</h4>
       </div>
       <div class="col-auto">
         <mat-icon aria-hidden="false" class="ico-phone" aria-label="Example location_on icon">location_on</mat-icon>
@@ -29,8 +29,8 @@
       &nbsp;
       <div class="col-auto txt-cl">
         <h2 class="mt-1">Office Address</h2>
-        <h4 class="txt-desc">Department of Agriculture, P.O.Box. 01,
-          Peradeniya</h4>
+        <h4 class="txt-desc">Freshio (Pvt) LTD., P.O.Box. 01,
+          Colombo</h4>
       </div>
     </div>
 
@@ -49,19 +49,25 @@
           <a aria-current="page" class="nav-link active" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./homePage'" href="#"><span>Home</span></a>
         </li>
         <li class="nav-item ms-3">
-          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./aboutUs'" href="#"><span>About Us</span></a>
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" (click)="AboutUSPage()" style="cursor: pointer"><span>About Us</span></a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link" *ngIf="loggedFarm" routerLinkActive="buttonActive" [routerLink]="'./fProblems'" href="#"><span>Farmer Problems</span></a>
         </li>
         <li class="nav-item ms-3">
-          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./products'" href="#"><span>Shop</span></a>
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./products'" (click)="goShop()" style="cursor: pointer"><span>Shop</span></a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link" *ngIf="loggedFarm" routerLinkActive="buttonActive" [routerLink]="'./experts'" href="#"><span>Agri Experts</span></a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./statics'" href="#"><span>Agri Statics</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./newsEvents'" href="#"><span>News & Events</span></a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link chatus" *ngIf="userf"  routerLinkActive="buttonActive" (click)="chatUss()" ><span>Chat Us</span></a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link" *ngIf="loggedAll" routerLinkActive="buttonActive" [routerLink]="'./contactUs'" href="#"><span>Contact</span></a>
@@ -77,9 +83,9 @@
           </a>
         </li>
       </ul>
-      <form class="d-flex ms-3">
+      <form class="d-flex ms-3" *ngIf="loginbtn">
         <div id="wrap" [matMenuTriggerFor]="menu">
-          <button mat-raised-button color="Basic" type="button">Login Here</button>
+          <button class="btn-login" mat-raised-button color="Basic" type="button">Login Here</button>
         </div>
         <mat-menu #menu="matMenu" >
           <div mat-menu-item class="btn-login">
@@ -90,6 +96,23 @@
           <div mat-menu-item class="btn-login">
             <button  mat-icon-button aria-label="Logout" routerLinkActive="buttonActive" [routerLink]="'authentication/expertlogin'"  style="margin-left: -15px; width: 150px">
               <mat-icon style="margin-right: 15px">login</mat-icon>Login As Expert
+            </button>
+          </div>
+        </mat-menu>
+      </form>
+      <form class="d-flex ms-3" *ngIf="logoutbtn">
+        <div id="wrap-2" [matMenuTriggerFor]="menu">
+          <button class="btn-login" mat-raised-button color="Basic" type="button">{{UsersName}}</button>
+        </div>
+        <mat-menu #menu="matMenu" >
+          <div mat-menu-item class="btn-login" *ngIf="userf">
+            <button  mat-icon-button aria-label="profile" [routerLink]="'./userProfile'" routerLinkActive="buttonActive" style="margin-left: -15px; width: 150px">
+              <mat-icon style="margin-right: 15px">person</mat-icon>Profile
+            </button>
+          </div>
+          <div mat-menu-item class="btn-login">
+            <button  mat-icon-button aria-label="Logout" (click)="logout()" routerLinkActive="buttonActive" style="margin-left: -15px; width: 150px">
+              <mat-icon style="margin-right: 15px">logout</mat-icon>Logout
             </button>
           </div>
         </mat-menu>

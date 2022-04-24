@@ -45,7 +45,10 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
+// import 'core-js/es7/reflect';
+// import 'web-animations-js';
 import 'zone.js';  // Included with Angular CLI.
+(window as any)['global'] = window;
 
 
 /***************************************************************************************************

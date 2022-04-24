@@ -1,19 +1,36 @@
 .card-one-3{
   width: 396.8px;
   height: 335.6px;
-  background: #313131;
+  border:3px solid #08903D;
   border-radius: 10px;
+  box-shadow: 0 0.5rem 1.3rem 0 rgb(44 51 73 / 50%);
+}
+.card-one-3 :hover{
+  cursor: pointer;
+  background: rgb(8, 144, 61, 10%) ;
+}
+.cover-one-3 :hover{
+  cursor: pointer;
+  background: rgb(8, 144, 61, 10%) ;
 }
 
 .ico-customer-3{
-  color: #08903D;
+  color: #23784D;
 }
 
 .cover-one-3{
-  background: #313131;
+  border:3px solid #08903D;
   font-size: 16px;
   /*padding: 3%;*/
   width: 83vw;
   border-radius: 10px;
+  box-shadow: 0 0.5rem 1.3rem 0 rgb(44 51 73 / 50%);
 }
 
+.font-colour{
+  color: #23784D
+}
+
+.icon-class{
+  color: rgba(32, 184, 6,1);
+}

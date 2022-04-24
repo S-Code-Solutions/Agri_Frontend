@@ -7,12 +7,14 @@ import { SubStaticsComponent } from './components/sub-statics/sub-statics.compon
 import {MatButtonModule} from "@angular/material/button";
 import {NgChartsModule} from "ng2-charts";
 import {NgCircleProgressModule} from "ng-circle-progress";
+import { SubSstaticsComponent } from './components/sub-sstatics/sub-sstatics.component';
 
 
 @NgModule({
   declarations: [
     StaticsComponent,
-    SubStaticsComponent
+    SubStaticsComponent,
+    SubSstaticsComponent
   ],
   imports: [
     CommonModule,

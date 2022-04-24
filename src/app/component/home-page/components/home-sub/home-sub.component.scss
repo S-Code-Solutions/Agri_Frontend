@@ -39,7 +39,7 @@
 .slide-wrapper:hover{
 
   cursor: pointer;
-  box-shadow: 2px 2px 29px 0px #000000;
+  box-shadow: 2px 2px 29px 0 #000000;
 
   .center-item{
     cursor: pointer;
@@ -170,15 +170,38 @@
 }
 
 .project-slide2{
-  width: 566px; height: 299px; border-radius: 11px
+  width: 566px;
+  height: 299px;
+  border-radius: 11px;
+  h3{
+    display: none;
+  }
+  h1{
+    display: none;
+  }
+  button{
+    //display: none;
+  }
 }
 
 .project-slide2:hover{
   cursor: pointer;
-  box-shadow: 2px 2px 29px 0px #000000;
+  box-shadow: 2px 2px 29px 0 #000000;
   background: #078E3E;
   img{
-    opacity: 0.4;
+    opacity: 0.3;
+  }
+  button{
+    background: #ffb606;
+    color: black;
+    border-color:#ffb606;
+    //display: block;
+  }
+  h3{
+    display: block;
+  }
+  h1{
+    display: block;
   }
 }
 

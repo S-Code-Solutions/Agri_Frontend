@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { ApprovalDialogConfig } from './model/ApprovalDialogConfig';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dialogs',
@@ -16,7 +17,7 @@ export class DialogsComponent implements OnInit {
   btnAccept = '';
   btnUnaccepted = '';
   image: any;
-  constructor(public dialogRef: MatDialogRef<DialogsComponent>,
+  constructor(public dialogRef: MatDialogRef<DialogsComponent>,private router: Router,
               @Inject(MAT_DIALOG_DATA) public data: ApprovalDialogConfig) {
     this.dialogType = data.dialogType;
     this.title = data.title;
@@ -44,7 +45,11 @@ export class DialogsComponent implements OnInit {
       this.style = 'error';
     }else {
       console.log('e');
-    }    }
+    }
+    this.router.events.subscribe((event) => {
+      document.body.classList.remove('nb-theme');
+    });
+  }
   onConfirm(): void {
     this.dialogRef.close(true);
   }

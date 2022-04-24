@@ -1,3 +1,17 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<nb-layout>
+  <nb-layout-column>
+        <section class="zindx text-center" *ngIf="showAnime">
+          <div class="loadingio-spinner-spin-mm5md6flgak"><div class="ldio-wu7meaqr7oo">
+            <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
+          </div></div>
+        </section>
+      <app-navbar *ngIf="showHead"></app-navbar>
+        <div [@routeAnimations]="getRouteAnimationData(outlet)" >
+          <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+      <app-footer *ngIf="showHead"></app-footer>
+        <ngx-scrolltop
+          backgroundColor="#08903D">
+        </ngx-scrolltop>
+  </nb-layout-column>
+</nb-layout>

@@ -4,25 +4,71 @@
     <div class="d-flex align-items-center justify-content-center">
       <div class="cover-one">
         <h1 class="text-center txt-sub-head-2 mb-4 mt-4" style="color: white">ASK FROM<br>
-          <span style="color: #ffb606">AGRI EXPERTS</span></h1>
+          <span style="color: #A2CD3A">AGRI EXPERTS</span></h1>
       </div>
     </div>
   </div>
 
+  <form  [formGroup]="itemDetailsForm" class="form-container" *ngIf="FarmForm">
   <div class="container p-3 mt-5 mb-3"
+       style="border: 3px solid #08903D; width: auto; height: auto; border-radius: 10px">
+    <div class="text-center mt-2">
+    <div class="row ">
+      <div class="col">
+        <mat-form-field appearance="outline" class="mt-form-field">
+          <mat-label>Your Name</mat-label>
+          <input formControlName="farmer_name"  matInput placeholder="username" minlength="1">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="mt-form-field">
+          <mat-label>Image</mat-label>
+          <input  formControlName="farmer_image" matInput placeholder="image" minlength="1">
+        </mat-form-field>
+      </div>
+    </div>
+    </div>
+    <div class="text-center mt-2">
+      <div class="row ">
+        <div class="col">
+          <mat-form-field appearance="outline" class="mt-desc-field">
+            <mat-label>Problem Title</mat-label>
+            <input formControlName="problem_title" matInput placeholder="title" minlength="1">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <div class="row ">
+        <div class="col">
+          <mat-form-field appearance="outline" class="mt-desc-field">
+            <mat-label>Problem Description</mat-label>
+            <textarea formControlName="problem_desc" matInput placeholder="description" minlength="1"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end me-5">
+      <button type="reset" class="btn btn-primary me-4 btn-reset" (click)="setFields()">Reset</button>
+      <button type="submit" class="btn btn-primary btn-add2" (click)="saveProblem()">Ask</button>
+    </div>
+  </div>
+  </form>
+
+  <div class="container p-3 mt-5 mb-3" *ngFor="let problems of serviceProblems"
        style="border: 3px solid #08903D; width: auto; height: auto; border-radius: 10px">
     <div class="row">
       <div class="col-1">
-        <img src="https://i.ibb.co/mbkHnRS/woman.png" style="object-fit: cover ; width:80px; border-radius: 100%"
+        <img [src]='problems.farmer_image' style="object-fit: cover ; width:80px; border-radius: 100%;border:1px solid #08903D;"
              alt="user">
       </div>
       <div class="col-10">
-        <h5>User name</h5>
+        <h5 style="color:#165D40">{{problems.farmer_name}}</h5>
         <div class="row">
-          <mat-icon class="col-1">public</mat-icon>
-          <h6 class="col-2">&nbsp; public</h6>
+          <mat-icon class="col-1" style="font-size: 21px; color: dimgrey">public</mat-icon>
+          <h6 class="col-2" style="margin-left: -5px;color: dimgrey">&nbsp; public</h6>
         </div>
-        <p>posted time</p>
+        <p style="color: #08903D ;font-size: 14px;">{{problems.created_at}}</p>
       </div>
 
 
@@ -40,24 +86,51 @@
       </form>
 
     </div>
-    <div class="mt-3" style="height: auto; width: auto">
-      <h4 class="ms-5">Problem Title</h4>
-      <p class="ms-5">Problem</p>
-      <br>
 
-          <mat-form-field class="cmnt-input ms-5">
-            <input [(ngModel)]="newAttribute.city" id="newAttributeCity" matInput name="newAttributeCity" placeholder="Your Comment" >
-          </mat-form-field>&nbsp;
-          <button mat-raised-button color="primary" (click)="addFieldValue()" type="button" class="btn-add" style="color: white">Add Comment</button>
-        <section *ngFor="let field of fieldArray; let i = index" class="ms-5 me-5">
-          <div class="row mt-2 cmt-wrapper p-2">
-            <h6 class="col-11 mt-2" [(ngModel)]="field.city" name="{{field.city}}">{{field.city}}</h6>
-          <div class="col-1">
-            <button mat-raised-button (click)="deleteFieldValue(i)" class="btn btn-default" type="button" color="warn">Delete</button>
-          </div>
-          </div>
-        </section>
+    <div class="mt-3" style="height: auto; width: auto">
+      <h4 class="ms-5">{{problems.problem_title}}</h4>
+      <p class="ms-5">{{problems.problem_desc}}</p>
     </div>
+    <div class="container">
+      <hr style=" border: 1px solid #08903D; opacity: 40%; border-radius: 10px">
+    </div>
+
+    <div class="row p-1 mt-5 add-comment" *ngIf="CmtForm">
+      <form [formGroup]="addCommentForm" class="form-container">
+      <mat-form-field style="margin-left: 12px;" class="cmnt-input col">
+        <input formControlName="comment_desc" id="newAttributeCity" matInput name="newAttributeCity" placeholder="Your Comment" >
+      </mat-form-field>&nbsp;
+      <button mat-raised-button (click)="submitComment(problems.problem_id)" color="primary"  type="button" class="btn-add2 col-1" style="color: white;width: 120px; height: 39px;">Add Comment</button>
+      </form>
+    </div>
+
+
+    <mat-accordion class="p-2">
+      <mat-expansion-panel (opened)="panelOpenState = true;GetAllComments(problems.problem_id);handleOpened(problems.problem_id)"
+                           (closed)="panelOpenState = false" hideToggle class="p-2" [expanded]="problems.problem_id === currentOpenedItemId">
+
+        <mat-expansion-panel-header style="height: auto; width: auto">
+
+          <div class="w-100"></div>
+          <div class="row">
+            <div class="col-1"><mat-icon class="mt-1" style="margin-left: 141px; color: #08903D">question_answer</mat-icon></div>
+            <div class="col-11" style="margin-left: 177px;margin-top: -35px;"><button class="btn-add"  mat-raised-button color="primary"  type="button"  style="color: white" ><h6 class="mt-2" >View Comments</h6></button></div>
+          </div>
+        </mat-expansion-panel-header>
+
+        <div class="row mt-4" style="margin-left: 74px;" *ngFor="let comments of serviceComments">
+          <div class="col-1">
+            <img [src]='comments.expert_img' style="object-fit: cover ; width:40px; border-radius: 100%;margin-left: -59px; margin-bottom: -51px; border:1px solid #8FC517;" alt="user">
+          </div>
+          <div class="cmt-wrapper col-11" style="padding: 10px">
+            <h6>{{comments.expert_name}}</h6>
+            <p class="ms-3 mt-2">{{comments.comment_desc}}</p>
+          </div>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
   </div>
 
 </section>

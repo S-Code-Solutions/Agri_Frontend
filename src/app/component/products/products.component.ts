@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    // this.scroll.scrollToPosition([0,0]);
+    this.router.events.subscribe((event) => {
+      document.body.classList.remove('nb-theme');
+    });
   }
 
 }

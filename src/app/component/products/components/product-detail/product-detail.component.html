@@ -2,22 +2,22 @@
 
   <div class="shoe-details-left">
 
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/nike.svg" alt="logo" class="logo" />
+    <img src="https://i.ibb.co/WDws5v0/freshio-01.png" alt="logo" class="logo" /> <strong style="color: #8FC517; font-size: 18px">Freshio Market</strong>
 
     <div class="product-title">
-      Air Structure <strong>19</strong>
+      <strong>{{productname}}</strong>
     </div>
 
     <div class="product-description">
-      Dynamic Support and Nike Zoom Air come together for a more supportive feel with high-speed responsiveness.
+      {{productdesc}}
     </div>
 
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/shoe.png" alt="shoe" class="product-shot animated fadeInLeft" />
+    <img [src]="product_imgs" alt="shoe" class="product-shot animated fadeInLeft" />
 
-    <div class="product-price">12,995</div>
+    <div class="product-price">{{Price}}</div>
 
     <div class="product-price-details">
-      EMI starts from 534 + Rs 100 Delivery
+      Item starts from {{Price}} + Rs 300 Delivery
     </div>
 
 
@@ -25,11 +25,11 @@
 
   <div class="shoe-details-right">
 
-    <span class="product-title">Air Structure <strong>19</strong></span>
+    <span class="product-title"><strong>{{productname}}</strong></span>
     <span class="label">New</span>
 
     <div class="product-category">
-      Running Collections
+      Green Collections
     </div>
 
     <div class="product-stars">
@@ -41,35 +41,37 @@
     </div>
 
     <ul class="product-tabs">
-      <li class="active"><a href="#pane1">Description</a></li>
+      <li class="active"><a href="#pane1">Contact To Buy</a></li>
     </ul>
 
     <div class="tab-content">
       <div id="pane1" class="tab-pane active">
-        Dynamic Support and Nike Zoom Air come together for a more supportive feel with high-speed responsiveness.
+        <strong>Seller Name : </strong>{{seller}}
+        <br>
+        <strong>Contact No : </strong>{{contact}}
       </div>
     </div> <!-- end tab-content -->
 
     <h4>Stocks</h4>
     <ul class="sizes">
-      <li><a href="#">1Kg</a></li>
-      <li><a href="#">5Kg</a></li>
-      <li class="active"><a href="#">10Kg</a></li>
-      <li><a href="#">25Kg</a></li>
-      <li><a href="#">50Kg</a></li>
+      <li><a >1Kg</a></li>
+      <li><a >5Kg</a></li>
+      <li class="active"><a >10Kg</a></li>
+      <li><a >25Kg</a></li>
+      <li><a >50Kg</a></li>
     </ul>
 
     <h4>Prices</h4>
     <ul class="sizes">
-      <li><a href="#">100</a></li>
-      <li><a href="#">500</a></li>
-      <li class="active"><a href="#">1000</a></li>
-      <li><a href="#">2500</a></li>
-      <li><a href="#">5000</a></li>
+      <li><a >100</a></li>
+      <li><a >500</a></li>
+      <li class="active"><a >1000</a></li>
+      <li><a >2500</a></li>
+      <li><a >5000</a></li>
     </ul>
 
 
-    <button class="mt-5" mat-raised-button color="primary" style="background: #08903D; border-color: #08903D">Contact To Buy</button>
+    <button class="mt-5" mat-raised-button color="primary" style="background: #08903D; border-color: #08903D" (click)="Requsetsent()">Request To Buy</button>
     &nbsp;&nbsp;
     <button mat-raised-button color="accent" style="background: #ff3b3b; border-color: #ff3b3b" (click)="onNoClick()">Close</button>
 

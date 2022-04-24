@@ -1,23 +1,23 @@
 <div class="container mt-4 ">
   <div class="d-flex align-items-center justify-content-center">
     <div class="cover-one">
-      <h1 class="text-center txt-sub-head-2 mb-4 mt-4" style="color: white">MEET<br>
-        OUR<span style="color: #ffb606"> AGRI</span> EXPERTS</h1>
+      <h1 class="text-center txt-sub-head-2 mb-4 mt-4 h11" style="color: white">MEET<br>
+        OUR<span style="color:#A2CD3A"> AGRI</span> EXPERTS</h1>
     </div>
   </div>
 </div>
 <section class="expert-wrapper ">
   <div class="d-flex justify-content-around flex-column">
     <div class="row p-4">
-      <div class="p-2 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-2 mb-2 d-flex justify-content-center">
+      <div class="p-2 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-2 mb-2 d-flex justify-content-center" *ngFor="let folder of serviceExperts">
           <mat-accordion>
             <mat-expansion-panel hideToggle class="expert-crd">
               <mat-expansion-panel-header style="width: auto;height: auto">
-                  <img src="https://i.ibb.co/mbkHnRS/woman.png" alt="women" class="user-img" >
+                  <img [src]="folder.expert_img" alt="women" class="user-img" >
                 <mat-panel-description>
                   <div class="d-flex flex-column">
-                  <h3 class="col" style="color: white">Mr.Jhon Doe</h3>
-                  <h5 class="col" style="color: white">Agri Expert</h5>
+                  <h3 class="col" style="color: white">{{folder.expert_name}}</h3>
+                  <h5 class="col" style="color: white">{{folder.expert_title}}</h5>
                     <p style="color: #ffb606">(Click to view More)</p>
                   </div>
                 </mat-panel-description>
@@ -25,15 +25,15 @@
 
               <div class="d-flex flex-column mt-2">
 
-                <h6 style="color: #ffb606">Specialist In agri</h6>
-                <p style="color: white">description about expert</p>
+                <h6 style="color: #ffb606">{{folder.expert_title}}</h6>
+                <p style="color: white">{{folder.expert_desc}}</p>
 
                 <div class="row mt-3">
                   <div class="col-1">
                     <mat-icon style="color:white">phone</mat-icon>&nbsp;&nbsp;
                   </div>
                   <div class="col">
-                    <h6 style="color: white">&nbsp;+94-77612345</h6>
+                    <h6 style="color: white">&nbsp;{{folder.expert_contact}}</h6>
                   </div>
                 </div>
                 <div class="row">
@@ -41,7 +41,7 @@
                     <mat-icon style="color: white">email</mat-icon>&nbsp;&nbsp;
                   </div>
                   <div class="col">
-                    <h6 style="color: white">&nbsp;jhon@mail.com</h6>
+                    <h6 style="color: white">&nbsp;{{folder.expert_mail}}</h6>
                   </div>
                 </div>
 

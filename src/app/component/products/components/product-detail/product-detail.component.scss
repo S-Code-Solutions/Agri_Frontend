@@ -3,7 +3,7 @@
 $border-radius-size: 20px;
 $orange: #2C781F;
 $blue: #2C781F;
-$yellow: #E8F324;
+$yellow: #165D40;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -30,7 +30,7 @@ strong {
 .shoe-details-left {
   float: left;
   background: #2C781F;
-  background: linear-gradient(#2C781F, #E8F324);
+  background: linear-gradient(#2C781F, #165D40);
   width: 270px;
   color: white;
   padding: 30px;
@@ -40,23 +40,29 @@ strong {
   .logo {
     width: 75px;
     margin-bottom: 55px;
+    margin-top: -14px;
+    margin-left: -13px;
   }
 
   .product-title {
     font-size: 20px;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-top: -40px;
+    margin-bottom: 16px;
   }
 
   .product-description {
     width: 200px;
     font-size: 12px;
+    margin-top: -14px;
+    margin-bottom: 11px;
   }
 
   .product-shot {
     width: 250px;
-    margin-left: -54px;
-    margin-top: -20px;
+    height: 250px;
+    margin-left: -21px;
+    object-fit: cover;
   }
 
   .product-price, .product-price-details {
@@ -67,6 +73,7 @@ strong {
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-top: 9px;
   }
 
   .product-price-details {
@@ -228,14 +235,7 @@ strong {
     }
   }
 
-  a.btn-primary {
-    background: $blue;
-    margin-right: 20px;
 
-    &:hover {
-      background: lighten($blue, 5%);
-    }
-  }
 
 } // end shoe-details-right
 

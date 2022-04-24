@@ -66,19 +66,19 @@
 }
 
 .popup-container .popup-close::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
+
+
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+
   transform: rotate(45deg);
   left: 8px;
 }
 
 .popup-container .popup-close::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
+
+
   -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
+
   transform: rotate(-45deg);
   right: 8px;
 }
@@ -107,5 +107,6 @@
 .txt-sub-head-2{
   font-family: RohnRounded ☞;
   color: white;
+  font-size: 44.88px;
 }
 

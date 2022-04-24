@@ -18,6 +18,12 @@ import {NgCircleProgressModule} from "ng-circle-progress";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { DialogsComponent } from './core/dialogs/dialogs.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {CookieModule} from "ngx-cookie";
+import {NgxScrollTopModule} from "ngx-scrolltop";
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 
 @NgModule({
@@ -41,7 +47,14 @@ import { DialogsComponent } from './core/dialogs/dialogs.component';
     NgChartsModule,
     NgCircleProgressModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    CookieModule.forRoot(),
+    NgxScrollTopModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

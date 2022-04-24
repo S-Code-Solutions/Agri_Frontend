@@ -73,7 +73,7 @@ export class GalleryComponent implements OnInit {
         items: 3
       }
     },
-    nav: true
+    nav: false
   }
 
 }

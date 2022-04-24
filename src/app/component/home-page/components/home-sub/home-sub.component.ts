@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeServiceService} from "../../services/home-service.service";
 import {OwlOptions} from "ngx-owl-carousel-o";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-home-sub',
@@ -107,17 +108,20 @@ export class HomeSubComponent implements OnInit {
   eventImages! :any[];
   newsImages! :any[];
 
-  constructor(private  homeservice:HomeServiceService) {
+  constructor(private  homeservice:HomeServiceService,
+              private scroll: ViewportScroller) {
+
   }
 
   ngOnInit(): void {
     this.startSlider();
     this.eventSlider();
     this.newsSlider();
+
   }
   startSlider(){
     this.slidesStore = this.homeservice.getStartDetails().slidesStore
-    for(var i = 0;i<this.slidesStore.length;i++) {
+    for(let i = 0;i<this.slidesStore.length;i++) {
       console.log(this.slidesStore[i])
     }
   }
@@ -132,12 +136,12 @@ export class HomeSubComponent implements OnInit {
 
   advertisementsOptions: OwlOptions = {
     autoplay: true,
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: true,
-    navSpeed: 700,
+    dots: false,
+    navSpeed: 600,
     navText: ['<', '>'],
     responsive: {
       0: {
@@ -160,12 +164,12 @@ export class HomeSubComponent implements OnInit {
     stagePadding: 65,
     margin:98,
     autoplay: true,
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 600,
     navText: ['<', '>'],
     responsive: {
       0: {
@@ -181,7 +185,7 @@ export class HomeSubComponent implements OnInit {
         items: 3
       }
     },
-    nav: true
+    nav: false
   }
 
 
@@ -189,12 +193,12 @@ export class HomeSubComponent implements OnInit {
     stagePadding: 60,
     margin:100,
     autoplay: true,
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 600,
     navText: ['<', '>'],
     responsive: {
       0: {
@@ -210,7 +214,11 @@ export class HomeSubComponent implements OnInit {
         items: 2
       }
     },
-    nav: true
+    nav: false
+  }
+
+  scrollToTop(){
+    this.scroll.scrollToPosition([0,0]);
   }
 
 }

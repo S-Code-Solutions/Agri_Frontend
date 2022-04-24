@@ -1,3 +1,8 @@
+
+ .chatus{
+cursor: pointer;
+ }
+
 .navbar-brand span{
   font-size: 28px;
   color: white;
@@ -13,24 +18,21 @@
 }
 
 .ico-social:hover{
-  color: #E8F324;
+  color: #A2CD3A;
 }
 
-.buttonActive{
-  color: #E8F324 !important;
-}
 
 .nav-link span:hover{
-  color: #E8F324;
+  color: #A2CD3A;
 }
 
 
 .d-flex button:hover{
-  background: #E8F324;
+  background: #A2CD3A;
 }
 .d-flex span{
   font-size: 18px;
-  color: #E8F324;
+  color: #A2CD3A;
 }
 
 .navbar-sec{
@@ -39,7 +41,7 @@
 
 .ico-phone{
   font-size: 2em;
-  color: #20B806;
+  color: #35B11F;
   padding-top: 9px;
   margin-left: 18px;
 }
@@ -54,8 +56,12 @@
 }
 
 .btn-login:hover{
-  background: #E8F324;
+  background: #A2CD3A;
 }
+
+ a {
+   text-decoration: none !important;
+ }
 
 
 
